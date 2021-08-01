@@ -1,1 +1,4 @@
 runtime: nodejs14
+
+env_variables:
+  REDIRECT_URL: "https://youtube-client-web.appspot.com/"

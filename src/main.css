@@ -1,0 +1,14 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	display: flex;
+	flex-flow: wrap;
+}
+
+.container a{
+	padding: 0;
+	margin: 10px;
+}

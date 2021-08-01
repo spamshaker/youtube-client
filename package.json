@@ -1,10 +1,19 @@
 {
-  "name": "@ria-develop/youtube-client",
+  "name": "youtube-playlist",
   "version": "1.0.0",
-  "description": "The custom Youtube Client",
-  "main": "server.js",
+  "private": true,
+  "workspaces": [
+    "client/*",
+    "server/*"
+  ],
   "scripts": {
-    "start": "node server.js"
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "webpack --watch",
+    "dev": "concurrently \"webpack serve\" \"nodemon ./server/web/server.js -q\"",
+    "start": "node ./server/web/server.js",
+    "deploy": "gcloud app deploy"
   },
   "repository": {
     "type": "git",
@@ -21,6 +30,39 @@
   },
   "homepage": "https://github.com/spamshaker/youtube-client#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@ria-develop/eslint-config": "^0.0.10",
+    "@types/express": "^4.17.13",
+    "@types/gapi": "^0.0.41",
+    "@types/react": "^17.0.16",
+    "@types/react-dom": "^17.0.9",
+    "@types/youtube": "^0.0.44",
+    "concurrently": "^6.2.0",
+    "css-loader": "^5.2.6",
+    "eslint": "^7.32.0",
+    "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.0.6",
+    "lerna": "^4.0.0",
+    "less": "^4.1.1",
+    "less-loader": "^10.0.1",
+    "mini-css-extract-plugin": "^2.1.0",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2",
+    "style-loader": "^3.0.0",
+    "ts-jest": "^27.0.4",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.3.5",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@ria-develop"
+    ]
   }
 }
