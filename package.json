@@ -1,0 +1,26 @@
+{
+  "name": "@ria-develop/youtube-client",
+  "version": "1.0.0",
+  "description": "The custom Youtube Client",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spamshaker/youtube-client.git"
+  },
+  "keywords": [
+    "Youtube",
+    "client"
+  ],
+  "author": "Michał Grzegorzewski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spamshaker/youtube-client/issues"
+  },
+  "homepage": "https://github.com/spamshaker/youtube-client#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
