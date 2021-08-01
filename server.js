@@ -1,9 +1,8 @@
 const express = require('express');
 const app = express();
+const path = require('path')
 
-app.get('/', (req, res) => {
-  res.send('Hello from App Engine!');
-});
+app.use('/', express.static(path.join(__dirname, 'public')));
 
 // Listen to the App Engine-specified port, or 8080 otherwise
 const PORT = process.env.PORT || 8000;
